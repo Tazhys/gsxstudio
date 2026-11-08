@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{43CDE2CC-32D6-4504-9546-EB46F2C790A2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>GSX_Studio.Program</StartupObject>
+    <RootNamespace>GSX Studio</RootNamespace>
+    <AssemblyName>GSX Studio</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>GSX Studio.ico</ApplicationIcon>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>lib\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Irony">
+      <HintPath>..\GSX Studio\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="DevExpress.BonusSkins.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.Drawing.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.Data.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.Images.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.Map.v26.1.Core">
+    </Reference>
+    <Reference Include="DevExpress.Office.v26.1.Core">
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v26.1.Core">
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v26.1.Export">
+    </Reference>
+    <Reference Include="DevExpress.Printing.v26.1.Core">
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v26.1.Core">
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v26.1.Core">
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.Utils.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.Utils.v26.1.UI">
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.XtraMap.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v26.1">
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v26.1">
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialogs\AskToSaveDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AskToSaveDialog.Designer.cs">
+      <DependentUpon>AskToSaveDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DeleteConfirmationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DeleteConfirmationDialog.Designer.cs">
+      <DependentUpon>DeleteConfirmationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditProjectSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EditProjectSettings.Designer.cs">
+      <DependentUpon>EditProjectSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\ExplorerPartWrapper.cs" />
+    <Compile Include="Editor\ExplorerScriptWrapper.cs" />
+    <Compile Include="Projects\GSCPart.cs" />
+    <Compile Include="Projects\GSCScript.cs" />
+    <Compile Include="Projects\GSXProject.cs" />
+    <Compile Include="Editor\IDE.cs" />
+    <Compile Include="Dialogs\ImportProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ImportProjectDialog.Designer.cs">
+      <DependentUpon>ImportProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LIBMGR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LIBMGR.Designer.cs">
+      <DependentUpon>LIBMGR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MyForm.Designer.cs">
+      <DependentUpon>MyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewPartDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewPartDialog.Designer.cs">
+      <DependentUpon>NewPartDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewProjectDialog.Designer.cs">
+      <DependentUpon>NewProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewScriptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewScriptDialog.Designer.cs">
+      <DependentUpon>NewScriptDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NotifyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NotifyDialog.Designer.cs">
+      <DependentUpon>NotifyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RenamePartDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RenamePartDialog.Designer.cs">
+      <DependentUpon>RenamePartDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RenameScriptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RenameScriptDialog.Designer.cs">
+      <DependentUpon>RenameScriptDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\XEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\XPlatformMemory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPlatformMemory.Designer.cs">
+      <DependentUpon>XPlatformMemory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XParserLib\XLNonTerminal.cs" />
+    <Compile Include="XParserLib\XLState.cs" />
+    <Compile Include="XParserLib\XParseLanguage.cs" />
+    <Compile Include="XParserLib\XParseNode.cs" />
+    <Compile Include="XParserLib\XParser.cs" />
+    <Compile Include="XParserLib\XParseTree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\autocompletebox.png">
+      <LogicalName>autocompletebox.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\DefaultCode.txt">
+      <LogicalName>DefaultCode.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\defaultitems.txt">
+      <LogicalName>defaultitems.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AskToSaveDialog.resources">
+      <DependentUpon>AskToSaveDialog.cs</DependentUpon>
+      <LogicalName>GSX_Studio.AskToSaveDialog.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DeleteConfirmationDialog.resources">
+      <DependentUpon>DeleteConfirmationDialog.cs</DependentUpon>
+      <LogicalName>GSX_Studio.DeleteConfirmationDialog.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditProjectSettings.resources">
+      <DependentUpon>EditProjectSettings.cs</DependentUpon>
+      <LogicalName>GSX_Studio.EditProjectSettings.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ImportProjectDialog.resources">
+      <DependentUpon>ImportProjectDialog.cs</DependentUpon>
+      <LogicalName>GSX_Studio.ImportProjectDialog.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LIBMGR.resx">
+      <DependentUpon>LIBMGR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MyForm.resx">
+      <DependentUpon>MyForm.cs</DependentUpon>
+      <LogicalName>GSX_Studio.MyForm.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewPartDialog.resources">
+      <DependentUpon>NewPartDialog.cs</DependentUpon>
+      <LogicalName>GSX_Studio.NewPartDialog.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewProjectDialog.resources">
+      <DependentUpon>NewProjectDialog.cs</DependentUpon>
+      <LogicalName>GSX_Studio.NewProjectDialog.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewScriptDialog.resources">
+      <DependentUpon>NewScriptDialog.cs</DependentUpon>
+      <LogicalName>GSX_Studio.NewScriptDialog.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NotifyDialog.resources">
+      <DependentUpon>NotifyDialog.cs</DependentUpon>
+      <LogicalName>GSX_Studio.NotifyDialog.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RenamePartDialog.resources">
+      <DependentUpon>RenamePartDialog.cs</DependentUpon>
+      <LogicalName>GSX_Studio.RenamePartDialog.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RenameScriptDialog.resources">
+      <DependentUpon>RenameScriptDialog.cs</DependentUpon>
+      <LogicalName>GSX_Studio.RenameScriptDialog.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\XEditor.resources">
+      <DependentUpon>XEditor.cs</DependentUpon>
+      <LogicalName>GSX_Studio.XEditor.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPlatformMemory.resources">
+      <DependentUpon>XPlatformMemory.cs</DependentUpon>
+      <LogicalName>GSX_Studio.XPlatformMemory.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\IntelliSenseKeyword_16x.png">
+      <LogicalName>IntelliSenseKeyword_16x.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Keywords.txt">
+      <LogicalName>Keywords.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Method_purple_32x.png">
+      <LogicalName>Method_purple_32x.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Method_purple_64x.png">
+      <LogicalName>Method_purple_64x.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Paths.txt">
+      <LogicalName>Paths.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="README.txt">
+      <LogicalName>README.txt</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GSXCompilerLib\GSXCompilerLib.csproj">
+      <Project>{A75510D3-685F-4957-B72E-2F527BE98096}</Project>
+      <Name>GSXCompilerLib</Name>
+      <SetPlatform>Platform=AnyCPU</SetPlatform>
+    </ProjectReference>
+    <ProjectReference Include="..\Updater\Updater.csproj">
+      <Project>{1206682D-5A77-4F30-A100-718F0F8394A4}</Project>
+      <Name>Updater</Name>
+      <SetPlatform>Platform=AnyCPU</SetPlatform>
+    </ProjectReference>
+    <Content Include="..\GSX Studio\GSXStyling.xml">
+      <Link>GSXStyling.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Analyzer Include="C:\Program Files\DevExpress 26.1\Components\Offline Packages\devexpress.data\26.1.3\analyzers\dotnet\DevExpress.Generator.dll" Visible="false" Condition="Exists('C:\Program Files\DevExpress 26.1\Components\Offline Packages\devexpress.data\26.1.3\analyzers\dotnet\DevExpress.Generator.dll')" />
+  </ItemGroup>
+</Project>
